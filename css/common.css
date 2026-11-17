@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+:root{
+  /* 컨텐츠 영역 서식 */
+  --cont_width01:1440px;
+  --cont_width02:1234px;
+  /* 색상 서식 */
+  --main_color01:#f64646;
+  --main_color02:#ffffff;
+  --sub_color01:#ffdf64;
+  --sub_color02:#f5eee6;
+  --font_color01:#333333;
+  --font_color02:#777777;
+  --otoki_shadow_header:0 0.8px 0 0.8px rgba(0, 0, 0, 0.3);
+  --otoki_shadow:0 0 0 1.6px rgba(0, 0, 0, 0.3);
+  --otoki_blur:blur(4px);
+}
+
+/* 비표시 요소 */
+input[type=checkbox]{
+  display:none;
+}
+/* 공통서식 */
+body{position:relative;}
+header, main, footer{
+  font-family:"Noto Sans", Helvetica, arial, sans-serif;
+}
+
+main h2{
+  font-size:44px; font-weight:900;
+}
+main p{
+  font-size:20px; font-weight:700;
+}
+main a{
+  color:var(--font_color01);
+}

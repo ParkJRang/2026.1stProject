@@ -1,0 +1,656 @@
+@charset "utf-8";
+
+:root{
+  /* 컨텐츠 영역 서식 */
+  --cont_width01:1440px;
+  --cont_width02:1234px;
+  /* 색상 서식 */
+  --main_color01:#f64646;
+  --main_color02:#ffffff;
+  --sub_color01:#ffdf64;
+  --sub_color02:#f5eee6;
+  --font_color01:#333333;
+  --font_color02:#777777;
+  --otoki_shadow_header:0 0.8px 0 0.8px rgba(0, 0, 0, 0.3);
+  --otoki_shadow:0 0 0 1.6px rgba(0, 0, 0, 0.3);
+  --otoki_blur:blur(4px);
+}
+
+@media screen and (min-width:1025px) {
+  /* 헤더 영역 */
+  header{
+    background-color:var(--main_color01);
+    height:196px;
+  }
+  header a{text-decoration:none;}
+  /* 헤더 상단 영역 */
+  .ht{
+    width:1214px; height:120px; margin:0 auto;
+    background-color:var(--main_color01);
+    display:flex; justify-content:space-between;
+    align-items:center;
+    padding:0 10px;
+    position:relative;
+  }
+  /* 헤더 상단 로고 */
+  .ht h1 a{display:block; height:58px;}
+  .ht h1 img{
+    width:210px;
+  }
+  /* 헤더 상단 검색바 */
+  .ht #ht_sb{
+    width:520px;
+    line-height:36px;
+    border:none;
+    border-bottom:2px solid var(--main_color02); font-size:20px; 
+    background-color:var(--main_color01);
+    color:var(--main_color02);
+    text-indent:24px;
+  }
+  .ht label{
+    position:absolute;
+    left:404px; top:28px;
+  }
+  .ht label img{
+    width:28px;
+  }
+  .ht label span{
+    display:block; text-indent:-9999px;
+  }
+  /* 헤더 상단 우측 로고 */
+  .ht .ht_nav ul{
+    display:flex; justify-content:space-between;
+    align-items:center;
+  }
+  .ht .ht_nav ul li:first-child a img{
+    width:50px;
+  }
+  .ht .ht_nav ul li:nth-child(2) a img{
+    width:38px; margin-left:20px;
+  }
+
+  /* 헤더 바텀 영역 */
+  /* 76 + 384 = 460 */
+  header #hb{
+    position:absolute;
+    width:100%; height:76px; background-color:rgba(255, 255, 255);
+    overflow:hidden; transition:0.7s;
+    box-shadow:var(--otoki_shadow_header);
+    z-index:3;
+  }
+  #hb:hover{height:460px;}
+  header #hb>.hb_nav{
+    width:1234px; height:76px; background-color:#fff;
+    margin:0 auto;
+  }
+  header #hb>.hb_nav>.hb_menu{
+    width:700px; line-height:76px; display:flex;
+    justify-content:space-between; padding:0 20px;
+  }
+  header #hb>.hb_nav>.hb_menu>li{text-align:center;
+    
+  }
+
+  header #hb>.hb_nav>.hb_menu>li:first-child:before{display:none;}
+
+
+  header #hb>.hb_nav>.hb_menu>li:before{content:' \007C '; position:relative; right:20px;}
+
+  header #hb>.hb_nav>.hb_menu>li>a{color:#333; font-size:20px; line-height:76px;
+
+  }
+
+  header #hb>.hb_nav>.hb_menu>li>a:hover{text-decoration:underline; color:#f64646;}
+  .m_search{display:none;}
+
+
+  /* 서브메뉴 */
+  header #hb>.hb_nav>.hb_menu>li>.sub01>li{line-height:46px;}
+  header #hb>.hb_nav>.hb_menu>li>.sub01>li>a{color:#333;}
+  header #hb>.hb_nav>.hb_menu>li>.sub01>li>a:hover{color:#f64646;}
+
+
+  /* 메인 영역 */
+  /* 메인배너 슬라이드 */
+  .main_banner{
+    width:100%; height:648px;
+    overflow:hidden; position:relative;
+  }
+  .main_banner img{
+    width:100%; height:100%; object-fit:cover;
+  }
+  .main_banner .tablet_img, .main_banner .mobile_img{
+    display:none;
+  }
+  .main_banner .swiper-button-next, .main_banner .swiper-button-prev{
+    color:#333;
+  }
+  .main_banner .swiper-pagination{
+    position:absolute;
+    display:block; width:66px;
+    left:220px; bottom:40px;
+    font-size:18px; color:#fff;
+    line-height:40px; background-color:rgba(0, 0, 0, .7);
+    border-radius:30px;
+  }
+
+  /* 카테고리 */
+  main .category{
+    width:100%; height:468px;
+    background-color:var(--sub_color02);
+  }
+  main .category .category_box{
+    display:flex; margin:0 auto;
+    width:1234px; height:468px;
+  }
+  /* 카테고리 좌측 */
+  .category .category_txt{
+    width:272px; height:468px;
+    background-color:var(--sub_color01);
+    box-sizing:border-box;
+  }
+  .category .category_txt .category_txtbox{
+    padding:124px 20px;
+  }
+  .category .category_txt .category_txtbox h2{
+    padding-bottom:22px;
+    font-weight:900;
+  }
+  .category .category_txt .category_txtbox h2 span{
+    font-size:40px;
+    font-weight:600;
+  }
+  .category .category_txt .category_txtbox p{
+    font-size:16px; line-height:1.2em;
+  }
+  .category .category_txt .category_txtbox p:nth-child(4){
+    padding-bottom:12px;
+  }
+  .category .category_txt .category_txtbox a{
+    display:flex; justify-content:flex-start;
+    gap:5px; align-items:center;
+  }
+  .category .category_txt .category_txtbox a .category_more{
+    background-color:var(--sub_color02);
+    border-radius:5px;
+    overflow:hidden;
+    padding:3.5px 8px;
+    font-size:13px; line-height:13px;
+  }
+  /* 카테고리 우측 */
+  .category .category_cont{
+    width:962px; height:468px;
+    background-color:var(--sub_color02);
+    position:relative;
+    display:flex;
+  }
+  .category .swiper{
+    width:942px; height:380px;
+    display:flex;
+    position:relative;
+    top:59px;
+    padding:1.6px;
+    padding-right:3.2px;
+    box-sizing:border-box;
+  }
+  .category .category_cont .category_card{
+    width:942px; height:350px;
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    background-color:var(--main_color02);
+    box-shadow:var(--otoki_shadow);
+    top:1.6px; left:1.6px;
+  }
+  .category .swiper-button-next, .category .swiper-button-prev{
+    color:var(--font_color02);
+  }
+  .category .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-horizontal{
+    transform:translateY(10px);
+  }
+  .category .swiper-pagination-bullet{
+    position:relative;
+    background-color:var(--font_color01);
+    width:9px; height:9px;
+    padding:8px;
+    background-clip:content-box;
+    box-sizing:content-box;
+  }
+  .category .swiper-pagination-bullet-active{
+    width:9px; height:9px;
+    padding:8px;
+    background-clip:content-box;
+    box-sizing:content-box;
+  }
+  .category .category_cont .category_card .card_text01{
+    margin:87.5px 0 35px 491px;
+  }
+  .category .category_cont .category_card .card_text01 li:first-child{
+    font-size:20px;
+    color:var(--font_color02);
+    font-weight:500;
+    line-height:40px;
+  }
+  .category .category_cont .category_card .card_text01 li:last-child{
+    font-size:34px;
+    color:var(--font_color01);
+    font-weight:900;
+  }
+  .category .category_cont .category_card .ct_under{
+    display:flex; gap:60px;
+    font-size:18px;
+    font-weight:700;
+    color:var(--font_color02);
+  }
+  .category .category_cont .category_card .card_text02{
+    margin-left:20px;
+  }
+  .category .category_cont .category_card .card_text02 li:last-child, main .category .category_cont .category_card .card_text03 li:last-child, main .category .category_cont .category_card .card_text04 li:last-child{
+    font-size:24px;
+    color:var(--font_color01);
+    font-weight:700;
+    line-height:48px;
+  }
+  .category .category_cont .category_card img{
+    float:left; 
+    width:471px; height:350px;
+  }
+
+
+  /* 인기레시피 */
+  main .hot{
+    width:1234px; height:823px;
+    padding:30px 0; margin:0 auto;
+    text-align:center;
+  }
+  main .hot h2{padding-bottom:10px;}
+  main .hot .hot_more{
+    display:flex; gap:5px;
+    padding:10px 30px 10px 0;
+    justify-content:flex-end;
+    align-items:center;
+  }
+  main .hot .hot_more span{
+    background-color:var(--sub_color02);
+    border-radius:5px;
+    overflow:hidden;
+    padding:3.5px 8px;
+    font-size:13px; line-height:13px;
+  }
+  /* 인기레시피 컨텐츠 영역 */
+  main .hot .hot_cont{
+    width:1174px; height:706px;
+    margin:0 30px;
+    display:grid; gap:10px;
+    grid-template-rows:repeat(2,auto);
+    grid-template-areas:
+    "h01 h01 h02 h03"
+    "h04 h05 h06 h06";
+  }
+  main .hot .hot_cont .h01{grid-area:h01; width:577px;}
+  main .hot .hot_cont .h02{grid-area:h02;}
+  main .hot .hot_cont .h03{grid-area:h03;}
+  main .hot .hot_cont .h04{grid-area:h04;}
+  main .hot .hot_cont .h05{grid-area:h05;}
+  main .hot .hot_cont .h06{grid-area:h06; width:577px;}
+  /* 인기레시피 카드디자인01 */
+  .hot .hot_cont .hot_card01{
+    width:577px; height:348px;
+    border-radius:15px;
+    overflow:hidden;
+    background-color:var(--main_color02);
+    box-shadow:var(--otoki_shadow);
+  }
+  .hot .hot_cont .hot_card01 img{
+    width:557px; height:232px;
+    border-radius:15px; overflow:hidden;
+    margin-top:10px;
+  }
+  .hot .hot_cont .hot_card01 .ht_box{
+    display:flex;
+  }
+  .hot .hot_cont .hot_card01 .card_text01{
+    font-size:36px; color:var(--font_color01);
+    font-weight:900; margin:30px 50px 30px 10px;
+  }
+  .hot .hot_cont .hot_card01 .ht_under{
+    font-size:18px; color:var(--font_color02);
+    font-weight:500; gap:50px;
+    display:inline-flex; text-align:left;
+    padding:25px 0;
+  }
+  .hot .hot_cont .hot_card01 .ht_under .card_text02 li:last-child, .hot .hot_cont .hot_card01 .ht_under .card_text03 li:last-child, .hot .hot_cont .hot_card01 .ht_under .card_text04 li:last-child{
+    font-size:24px; color:var(--font_color01);
+    font-weight:700; line-height:48px;
+  }
+  .hot .hot_cont .hot_card01.h06 .ht_box .card_text01{
+    margin:30px 0 30px 10px;
+  }
+  .hot .hot_cont .hot_card01.h06 .ht_box .card_text01 li{
+    display:inline-block;
+    width:300px;
+  }
+  .hot .hot_cont .hot_card01.h06 .ht_box .ht_under{
+    gap:20px;
+  }
+  /* 인기레시피 카드디자인02 */
+  .hot .hot_cont .hot_card02{
+    width:283.5px; height:348px;
+    border-radius:15px;
+    overflow:hidden; text-align:left;
+    background-color:var(--main_color02);
+    box-shadow:var(--otoki_shadow);
+  }
+  .hot .hot_cont .hot_card02 img{
+    width:268.5px; height:232px;
+    padding:10px;
+  }
+  .hot .hot_cont .hot_card02 .card_text01{
+    font-size:26px; color:var(--font_color01);
+    font-weight:900;
+    margin:0 0 10px 10px;
+  }
+  .hot .hot_cont .ht_under{
+    font-size:13px; color:var(--font_color02);
+    font-weight:500; gap:40px;
+    display:inline-flex; text-align:left;
+    margin-left:10px;
+  }
+  .hot .hot_cont .ht_under .card_text02 li:last-child, .hot .hot_cont .ht_under .card_text03 li:last-child, .hot .hot_cont .ht_under .card_text04 li:last-child{
+    font-size:18px; color:var(--font_color01);
+    font-weight:700;
+    line-height:28px;
+  }
+
+  /* 신규레시피 */
+  main .new{
+    width:100%; height:706px;
+    padding:30px 0; text-align:center;
+    background-color:var(--sub_color02);
+  }
+  main .new h2{padding-bottom:10px;}
+  main .new p{padding-bottom:10px;}
+  main .new .new_more{
+    width:208px; padding:15px 5px;
+    font-size:20px; font-weight:700;
+    display:block; margin:30px auto 0;
+    color:var(--main_color02);
+    background-color:var(--main_color01);
+    border:1px solid var(--main_color01);
+    border-radius:50px;
+  }
+
+  /* 신규레시피 컨텐츠 영역 */
+  .new .new_cont{
+    width:1600px; height:543  .2px;
+    margin:0 auto;
+    position:relative;
+    padding-top:1.6px;
+    overflow:hidden;
+    box-sizing:border-box;
+  }
+  .new .new_cont .new_card01{
+    width:505px; height:540px;
+    border-radius:20px;
+    overflow:hidden; text-align:left;
+    box-shadow:var(--otoki_shadow);
+    background-color:var(--main_color02);
+    box-sizing:border-box;
+  }
+  .new .new_cont .new_card01 img{
+    width:477px; height:320px;
+    border-radius:20px; overflow:hidden;
+    padding:10px;
+  }
+  .new .new_cont .new_card01 .card_text01{
+    font-size:36px; color:var(--font_color01);
+    font-weight:900;
+    margin:20px 0 30px 10px;
+  }
+  .new .new_cont .nt_under{
+    font-size:18px; color:var(--font_color02);
+    font-weight:500; gap:40px;
+    display:inline-flex; text-align:left;
+    margin-left:10px;
+  }
+  .new .new_cont .nt_under .card_text02 li:last-child, .new .new_cont .nt_under .card_text03 li:last-child, .new .new_cont .nt_under .card_text04 li:last-child{
+    font-size:24px; color:var(--font_color01);
+    font-weight:700;
+    line-height:36px;
+  }
+  .new .new_cont .swiper-button-next {
+    position:absolute;
+    right:480px;
+    color:var(--font_color01);
+  }
+  .new .new_cont .swiper-button-prev{
+    position:absolute;
+    left:480px;
+    color:var(--font_color01);
+  }
+
+  /* 시즌별 추천 레시피 */
+  main .season{
+    width:1234px; height:742px;
+    padding:30px 0;
+    margin:0 auto; text-align:center;
+  }
+  main .season h2{padding-bottom:10px;}
+  main .season p{padding-bottom:10px;}
+  /* 시즌별 추천 레시피 네비게이션 */
+  main .season .season_nav{
+    width:870px; margin:0 auto;
+  }
+  main .season .season_nav .season_navbox{
+    display:flex; justify-content:space-between;
+    background-color:var(--sub_color02);
+    border:1px solid var(--sub_color02);
+    border-radius:15px;
+  }
+  main .season .season_nav .season_navbox li a{
+    display:block; width:204px; 
+    line-height:65px; font-size:30px;
+    text-align:center; padding:none;
+  }
+  /* 시즌별 추천 레시피 더보기 */
+  main .season .season_more{
+    display:flex; justify-content:flex-end;
+    padding:20px 30px 10px 0; gap:5px;
+    align-items:center;
+  }
+  main .season .season_more span{
+    background-color:var(--sub_color02);
+    font-size:13px;
+    line-height:13px;
+    border-radius:5px;
+    overflow:hidden;
+    padding:3.5px 8px;
+  }
+  /* 시즌별 추천 레시피 컨텐츠 영역 */
+  main .season .season_cont{
+    width:1234px; height:540px;
+    position:relative;
+  }
+  /* 시즌별 추천 레시피 카드디자인 */
+  .season .season_cont .sc_box{
+    width:1200px; height:500px;
+    display:flex; justify-content:space-between;
+    margin:0 auto;
+    position:relative; z-index:2;
+  }
+  .season .season_cont .sc_box .season_card{
+    width:390px; height:500px;
+    border-radius:20px;
+    overflow:hidden; text-align:left;
+    background-color:var(--main_color02);
+    opacity:90%; 
+    box-shadow:var(--otoki_shadow);
+  }
+  .season .season_cont .sc_box .season_card img{
+    width:360px; height:298px;
+    border-radius:20px; overflow:hidden;
+    padding:10px;
+  }
+  .season .season_cont .sc_box .season_card .card_text01{
+    font-size:36px; color:var(--font_color01);
+    font-weight:900;
+    margin:20px 0 30px 10px;
+  }
+  .season .season_cont .st_under{
+    font-size:18px; color:var(--font_color02);
+    font-weight:500; gap:40px;
+    display:inline-flex; text-align:left;
+    margin-left:10px;
+  }
+  .season .season_cont .sc_box .st_under .card_text02 li:last-child, .season .season_cont .sc_box .st_under .card_text03 li:last-child, .season .season_cont .sc_box .st_under .card_text04 li:last-child{
+    font-size:24px; color:var(--font_color01);
+    font-weight:700;
+    line-height:36px;
+  }
+  /* 시즌별 추천 레시피 배경사진 */
+  main>.season>.season_cont>img{
+    width:1234px; height:426px;
+    bottom:386px; opacity:70%; 
+    position:relative; z-index:1;
+    filter:blur(4px);
+  }
+  /* 이벤트 */
+  .event{
+    width:100%; 
+    height:574px;
+    padding:60px 0; 
+    text-align:center;
+    background-color:var(--sub_color02);
+    margin:0 auto;
+  }
+  .event h2{
+    margin-bottom:30px;
+  }
+  .event .event_box{
+    display:grid;
+    width:1234px; 
+    height:500px;
+    border-radius:20px;
+    overflow:hidden;
+    grid-template-rows: repeat(2, 250px);
+    grid-template-areas: 
+      "e01 e03"
+      "e02 e03";
+    margin:0 auto;
+  }
+  .event .event_box .event01{
+    grid-area: e01;
+  }
+  .event .event_box .event01 img{
+    width:617px;
+  }
+  .event .event_box .event01 .event_text01{
+    color:var(--main_color02);
+    position:relative;
+    text-align:left;
+    left:20px; bottom:165px;
+    line-height:40px;
+  }
+
+  .event .event_box .event02{
+    grid-area: e02;
+  }
+  .event .event_box .event02 img{
+    width:617px;
+  }
+  .event .event_box .event02 .event_text02{
+    color:var(--font_color01);
+    position:relative;
+    text-align:left;
+    left:20px;
+    bottom:186px;
+    line-height:34px;
+  }
+  .event .event_box .event02 .event_text02 p:last-child{
+    font-size:28px; font-weight:700;
+    line-height:42px;
+  }
+
+  .event .event_box .event03{
+    grid-area: e03; 
+    background-color:var(--main_color01);
+    position:relative;
+  }
+  .event .event_box .event03 img{
+    width:617px; height:378px;
+    position:relative;
+    top:122px;
+  }
+  .event .event_box .event03 a{
+    width:208px; font-size:20px;
+    font-weight:bolder;
+    padding:15px 5px;
+    display:block;
+    position:relative;
+    left:198px; bottom:346px;
+    color:var(--font_color01);
+    background-color:var(--sub_color01);
+    border:1px solid var(--sub_color01);
+    border-radius:50px;
+  }
+  /* 푸터 영역 */
+  footer{
+    width:100%; height:170px;
+    background-color:var(--main_color01);
+    color:var(--main_color02);
+    font-size:20px;
+  }
+  footer .f_inner{
+    width:1234px; height:170px;
+    margin:0 auto; display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  /* 푸터 로고 */
+  footer .f_inner .f_logo{padding:10px 30px 10px 20px;}
+
+  /* 푸터 왼쪽 */
+  footer .f_inner .f_left{
+    width:480px; height:137px; font-size:16px;
+  }
+  footer .f_inner .f_left p,address{line-height:20px;}
+  footer .f_inner .f_left p:first-child{
+    margin-bottom:50px; font-size:20px;
+  }
+
+  /* 푸터 오른쪽 */
+  footer .f_inner .f_right{
+    height:137px;
+  }
+  /* 푸터 패밀리사이트 네비게이션 */
+  footer .f_inner .f_right .f_nav{
+    padding-bottom:80px; padding-right:10px;
+  }
+  footer .f_inner .f_right .f_nav ul{
+    display:flex; justify-content:flex-end;
+    gap:40px;
+  }
+  footer .f_inner .f_right .f_nav ul li:before{
+    content:'\007c'; position:relative; 
+    right:20px; bottom:2px;
+  }
+  footer .f_inner .f_right .f_nav ul li a{
+    text-decoration:none; color:#fff;
+  }
+  footer .f_inner .f_right .f_nav ul li:first-child:before{display:none;}
+  /* 푸터 아이콘 네비게이션 */
+  footer .f_inner .f_right .f_icon ul{
+    display:flex; justify-content:flex-end;
+    gap:20px;
+  }
+  footer .f_inner .f_right .f_icon ul li:first-child a img{
+    width:30px; padding:5px;
+  }
+  footer .f_inner .f_right .f_icon ul li:nth-child(2) a img{
+    width:30px; padding:5px;
+  }
+  footer .f_inner .f_right .f_icon ul li:nth-child(3) a img{
+    width:40px;
+  }
+}
+

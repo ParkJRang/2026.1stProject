@@ -1,0 +1,395 @@
+@charset "utf-8";
+
+:root{
+/* 컨텐츠 영역 서식 */
+--cont_width01:1440px;
+--cont_width02:1234px;
+/* 색상 서식 */
+--main_color01:#f64646;
+--main_color02:#ffffff;
+--sub_color01:#ffdf64;
+--sub_color02:#f5eee6;
+--font_color01:#333333;
+--font_color02:#777777;
+--otoki_shadow_header:0 0.8px 0 0.8px rgba(0, 0, 0, 0.3);
+--otoki_shadow:0 0 0 1.6px rgba(0, 0, 0, 0.3);
+--otoki_blur:blur(4px);
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+  /* 헤더 영역 */
+  header{
+    width:100%;
+    height:5rem;
+    padding-top:2.06rem;
+    position:fixed;
+    top:0; left:0;
+    z-index:1000;
+    background-color:var(--main_color02);
+  }
+  .ht, .hb, .hb_nav, #hb{display:none;}
+  /* 헤더 로고 */
+  .tablet_h{
+    background-color:var(--main_color01);
+    width:100%;
+    height:5rem;
+    position:relative;
+    display:flex;
+    justify-content:flex-start;
+  }
+  .tablet_h h1 img{
+    width:210px;
+    position:absolute;
+    top:13.75%; left:37%;
+  }
+  /* 태블릿 해더 아이콘 메뉴 */
+  .tablet_h .tablet_nav{
+    position:absolute;
+    top:25%; left:1.94%; 
+  }
+  .tablet_h .tablet_nav ul{
+    display:flex; gap:5%;
+  }
+  .tablet_h .tablet_nav .tablet_menu img{
+    width:40px;
+  }
+  .tablet_h .tablet_nav .tablet_basket img{
+    width:40px;
+  }
+  .tablet_h .tablet_nav .tablet_balance img{
+    width:30px; padding:5px;
+  }
+  /* 헤더 검색바 */
+  #tablet_sb{
+    display:inline-block;
+    width:244px;
+    height:36px;
+    line-height:36px;
+    border:none;
+    border-bottom:2px solid var(--main_color02); font-size:20px; 
+    background-color:var(--main_color01);
+    color:var(--main_color02);
+    text-indent:24px;
+    position:absolute;
+    top:25%; right:1.94%;
+  }
+  .tablet_h label{
+    position:absolute;
+    right:242px; top:12px;
+    z-index:1;
+  }
+  .tablet_h label img{
+    width:24px;
+  }
+  .tablet_h label span{
+    display:block; text-indent:-9999px;
+  }
+  .m_search{display:none;}
+  /* 메인영역 */
+  main{padding-top:7.06rem;}
+  main h2{font-size:77.27%;}
+  /* 메인배너 슬라이드 영역 */
+  .main_banner{
+    width:100%; 
+    max-width:1024px;
+    aspect-ratio:1024 / 710;
+    overflow:hidden; position:relative;
+  }
+  .main_banner img{
+    width:100%; height:100%; object-fit:cover;
+  }
+  .main_banner .swiper-slide .pc_banner, .main_banner .swiper-slide .mobile_banner{
+    display:none;
+  }
+  .main_banner .swiper-button-next, .main_banner .swiper-button-prev{
+    color:#333;
+  }
+  .main_banner .swiper-pagination{
+    position:absolute;
+    display:block; width:66px;
+    left:110px; bottom:40px;
+    font-size:18px; color:#fff;
+    line-height:40px; background-color:rgba(0, 0, 0, .7);
+    border-radius:30px;
+  }
+  /* 카테고리 영역 */
+  main .category .category_box{
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    background-color:var(--sub_color02);
+    padding:100px;
+  }
+  /* 카테고리 좌측 */
+  .category .category_txt{
+    width:100%;
+    background-color:var(--sub_color01);
+    box-sizing:border-box;
+  }
+  .category .category_txt .category_txtbox{
+    padding:86px 10px;
+  }
+  .category .category_txt .category_txtbox h2{
+    font-size:212.5%;
+    padding-bottom:7.44%;
+    font-weight:900;
+  }
+  .category .category_txt .category_txtbox h2 span{
+    font-size:88.24%;
+    font-weight:600;
+  }
+  .category .category_txt .category_txtbox p{
+    font-size:100%; line-height:120%;
+  }
+  .category .category_txt .category_txtbox p:nth-child(4){
+    padding-bottom:3.72%;
+  }
+  .category .category_txt .category_txtbox a{
+    display:flex; justify-content:flex-start;
+    gap:5px; align-items:center;
+  }
+  .category .category_txt .category_txtbox a .category_more{
+    background-color:var(--sub_color02);
+    border-radius:5px;
+    overflow:hidden;
+    padding:1.63% 3.72%;
+    font-size:81.25%; line-height:100%;
+  }
+  /* 카테고리 우측 */
+  .category .category_cont{
+    width:789px;
+    height:346px;
+    background-color:var(--sub_color02);
+    position:relative;
+    display:flex;
+  }
+  /* 카드디자인 영역 */
+  .category .swiper{
+    width:770px;
+    height:306px;
+    top:20px;
+    padding:0.1rem;
+    padding-right:0.2rem;
+    box-sizing:border-box;
+  }
+  .category .swiper .swiper-wrapper{
+    display:flex;
+    position:relative;
+  }
+  .category .category_cont .category_card{
+    width:765px;
+    height:283px;
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    background-color:var(--main_color02);
+    box-shadow:var(--otoki_shadow);
+    top:0.1rem; left:0.1rem;
+  }
+  .category .category_cont .category_card img{
+    float:left; 
+    width:50%; height:100%;
+  }
+  .category .swiper-button-next, .category .swiper-button-prev{
+    color:var(--font_color02);
+  }
+  .category .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-horizontal{
+    transform:translateY(10px);
+  }
+  .category .swiper-pagination-bullet{
+    background-color:var(--font_color01);
+    width:9px; height:9px;
+  }
+  /* 카드디자인 텍스트 */
+  .category .category_cont .category_card .card_text01{
+    margin:87.5px 0 35px 403px;
+  }
+  .category .category_cont .category_card .card_text01 li:first-child{
+    font-size:16px;
+    color:var(--font_color02);
+    font-weight:500;
+    line-height:40px;
+  }
+  .category .category_cont .category_card .card_text01 li:last-child{
+    font-size:28px;
+    color:var(--font_color01);
+    font-weight:900;
+  }
+  .category .category_cont .category_card .ct_under{
+    display:flex; gap:60px;
+    font-size:14px;
+    font-weight:700;
+    color:var(--font_color02);
+  }
+  .category .category_cont .category_card .card_text02{
+    margin-left:20px;
+  }
+  .category .category_cont .category_card .card_text02 li:last-child, main .category .category_cont .category_card .card_text03 li:last-child, main .category .category_cont .category_card .card_text04 li:last-child{
+    font-size:18px;
+    color:var(--font_color01);
+    font-weight:700;
+    line-height:48px;
+  }
+  /* 인기레시피 */
+  main .hot{
+    width:1024px; 
+    padding:100px 0; margin:0 auto;
+    text-align:center;
+  }
+  main .hot h2{padding-bottom:10px;}
+  main .hot .hot_more{
+    display:flex; gap:5px;
+    padding:10px 30px 10px 0;
+    justify-content:flex-end;
+    align-items:center;
+  }
+  main .hot .hot_more span{
+    background-color:var(--sub_color02);
+    border-radius:5px;
+    overflow:hidden;
+    padding:3.5px 8px;
+    font-size:13px; line-height:13px;
+  }
+  /* 인기레시피 컨텐츠 영역 */
+  main .hot .hot_cont{
+    width:1174px; height:706px;
+    margin:0 30px;
+    display:grid; gap:10px;
+    grid-template-rows:repeat(2,auto);
+    grid-template-areas:
+    "h01 h01 h02 h03"
+    "h04 h05 h06 h06";
+  }
+  main .hot .hot_cont .h01{grid-area:h01; width:577px;}
+  main .hot .hot_cont .h02{grid-area:h02;}
+  main .hot .hot_cont .h03{grid-area:h03;}
+  main .hot .hot_cont .h04{grid-area:h04;}
+  main .hot .hot_cont .h05{grid-area:h05;}
+  main .hot .hot_cont .h06{grid-area:h06; width:577px;}
+  /* 인기레시피 카드디자인01 */
+  .hot .hot_cont .hot_card01{
+    width:577px; height:348px;
+    border-radius:15px;
+    overflow:hidden;
+    background-color:var(--main_color02);
+    box-shadow:var(--otoki_shadow);
+  }
+  .hot .hot_cont .hot_card01 img{
+    width:557px; height:232px;
+    border-radius:15px; overflow:hidden;
+    margin-top:10px;
+  }
+  .hot .hot_cont .hot_card01 .ht_box{
+    display:flex;
+  }
+  .hot .hot_cont .hot_card01 .card_text01{
+    font-size:36px; color:var(--font_color01);
+    font-weight:900; margin:30px 50px 30px 10px;
+  }
+  .hot .hot_cont .hot_card01 .ht_under{
+    font-size:18px; color:var(--font_color02);
+    font-weight:500; gap:50px;
+    display:inline-flex; text-align:left;
+    padding:25px 0;
+  }
+  .hot .hot_cont .hot_card01 .ht_under .card_text02 li:last-child, .hot .hot_cont .hot_card01 .ht_under .card_text03 li:last-child, .hot .hot_cont .hot_card01 .ht_under .card_text04 li:last-child{
+    font-size:24px; color:var(--font_color01);
+    font-weight:700; line-height:48px;
+  }
+  .hot .hot_cont .hot_card01.h06 .ht_box .card_text01{
+    margin:30px 0 30px 10px;
+  }
+  .hot .hot_cont .hot_card01.h06 .ht_box .card_text01 li{
+    display:inline-block;
+    width:300px;
+  }
+  .hot .hot_cont .hot_card01.h06 .ht_box .ht_under{
+    gap:20px;
+  }
+  /* 인기레시피 카드디자인02 */
+  .hot .hot_cont .hot_card02{
+    width:283.5px; height:348px;
+    border-radius:15px;
+    overflow:hidden; text-align:left;
+    background-color:var(--main_color02);
+    box-shadow:var(--otoki_shadow);
+  }
+  .hot .hot_cont .hot_card02 img{
+    width:268.5px; height:232px;
+    padding:10px;
+  }
+  .hot .hot_cont .hot_card02 .card_text01{
+    font-size:26px; color:var(--font_color01);
+    font-weight:900;
+    margin:0 0 10px 10px;
+  }
+  .hot .hot_cont .ht_under{
+    font-size:13px; color:var(--font_color02);
+    font-weight:500; gap:40px;
+    display:inline-flex; text-align:left;
+    margin-left:10px;
+  }
+  .hot .hot_cont .ht_under .card_text02 li:last-child, .hot .hot_cont .ht_under .card_text03 li:last-child, .hot .hot_cont .ht_under .card_text04 li:last-child{
+    font-size:18px; color:var(--font_color01);
+    font-weight:700;
+    line-height:28px;
+  }
+
+  /* 푸터 영역 */
+  .mf_inner{display:none;}
+  .f_inner{
+    width:100%;
+    height:9.37rem;
+    background-color:var(--main_color01);
+    display:flex;
+    position:relative;
+    font-size:14px;
+    color:var(--main_color02);
+    z-index:1000;
+  }
+  /* 푸터 로고 */
+  .f_inner h2 img{
+    width:130px;
+    padding:10px 0.97%;
+  }
+  /* 푸터 좌측 */
+  .f_innder .f_left{
+    font-size:14px;
+    color:var(--main_color02);
+  }
+  .f_inner .f_left p:first-child{
+    display:inline-block;
+    font-size:18px;
+    font-weight:600;
+    padding:20px 0 40px 0;
+  }
+  .f_inner .f_left p, .f_inner .f_left address{
+    line-height:16px;
+  }
+  /* 푸터 우측 */
+  /* 패밀리사이트 메뉴 */
+  .f_inner .f_nav ul{
+    display:flex;
+  }
+  .f_inner .f_nav ul li a{
+    color:var(--main_color02);
+  }
+  /* SNS아이콘 메뉴 */
+  .f_inner .f_right{
+    position:absolute;
+    top:20px; right:1.94%;
+  }
+  .f_inner .f_nav{
+    padding-bottom:64px;
+  }
+  .f_inner .f_icon ul{
+    display:flex; 
+    justify-content:flex-end;
+    align-items:center;
+    gap:2.63rem;
+  }
+  .f_inner .f_icon ul li a img{
+    height:1.87rem;
+  }
+  .f_inner .f_icon ul li:last-child a img{height:2.4rem;}
+}

@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O'kitchen</title>
+  <meta name="description" content="오키친 레시피 사이트, 오뚜기 제품을 활용한 레시피 사이트, 보다 쉽고, 보다 맛있게" />
+  <meta name="keywords" content="오뚜기, 레시피, 요리" />
+  <meta http-equiv="Subject" content="요리 레시피" />
+  <meta http-equiv="Title" content="오뚜기 오키친" />
+  <meta http-equiv="Build" content="2026-10-13" />
+
+  <!-- 파비콘 -->
+  <link rel="shortcut icon" href="./images/o'kitchen_favi.ico" type="image/x-icon">
+  <!-- 아이콘폰트 서식 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <!-- swiper서식 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css">
+  <!-- 초기화 서식 -->
+  <link rel="stylesheet" href="./css/css_reset.css" type="text/css">
+  <!-- 공통 서식 -->
+  <link rel="stylesheet" href="./css/common.css" type="text/css">
+  <!-- pc페이지 서식 -->
+  <link rel="stylesheet" href="./css/pc.css" type="text/css">
+  <!-- tablet페이지 서식 -->
+  <link rel="stylesheet" href="./css/tablet.css" type="text/css">
+  <!-- mobile페이지 서식 -->
+  <link rel="stylesheet" href="./css/mobile.css" type="text/css">
+  
+</head>
+<body>
+  <!-- 체크박스 -->
+  <input type="checkbox" id="toggle">
+  <header>
+    <!-- 헤더 상단영역 -->
+    <div class="ht">
+      <h1><!-- 헤더 상단 로고 -->
+        <a href="index.html">
+          <img src="./images/오뚜기오키친로고.png" alt="오뚜기 오키친 로고">
+        </a>
+      </h1>
+      <!-- 헤더 상단 검색바 -->
+      <label for="ht_sb"><span>검색</span><img src="./images/search_white.svg" alt="검색아이콘"></label>
+      <input type="text" value="오뚜기 제품, 요리명 등 다양하게 검색해보세요(예:카레)" id="ht_sb"/>
+      <nav class="ht_nav"><!-- 헤더 우측 로고 -->
+        <ul>
+          <li>
+            <a href="#">
+              <img src="./images/장바구니_흰색_투명배경.png" alt="오뚜기몰 바로가기">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/오밸런스_흰색_투명배경.png" alt="오밸런스 바로가기">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- 헤더 하단영역 -->
+    <div id="hb">
+      <nav class="hb_nav">
+        <ul class="hb_menu">
+          <li><!-- 카테고리 -->
+            <a href="category.html" title="카테고리">카테고리</a>
+          <!-- 서브메뉴 -->
+            <ul class="sub01">
+              <li>
+                <a href="category_sort.html">종류</a>
+              </li>
+              <li>
+                <a href="category_ingredients.html">재료</a>
+              </li>
+              <li>
+                <a href="category_method.html">방법</a>
+              </li>
+              <li>
+                <a href="category_theme.html">테마</a>
+              </li>
+              <li>
+                <a href="category_anniversary.html">기념일</a>
+              </li>
+              <li>
+                <a href="category_cookware.html">도구</a>
+              </li>
+            </ul>
+          </li>
+          <li><!-- 인기레시피 -->
+            <a href="hot.html" title="인기레시피">인기레시피</a>
+            <!-- 서브메뉴 -->
+              <ul class="sub01">
+                <li>
+                  <a href="curry.html">#카레</a>
+                </li>
+                <li>
+                  <a href="mayonnaise.html">#마요네스</a>
+                </li>
+                <li>
+                  <a href="snackfood.html">#분식</a>
+                </li>
+                <li>
+                  <a href="brunch.html">#브런치</a>
+                </li>
+                <li>
+                  <a href="home_meal.html">#집밥</a>
+                </li>
+                <li>
+                  <a href="cheese.html">#치즈듬뿍</a>
+                </li>
+                <li>
+                  <a href="camping.html">#캠핑</a>
+                </li>
+                <li>
+                  <a href="simple_comb.html">#간단 꿀조합</a>
+                </li>
+              </ul>
+          </li>
+          <li><!-- 신규레시피 -->
+            <a href="new.html" title="신규레시피">신규레시피</a>
+          <!-- 서브메뉴 -->
+            <ul class="sub01">
+              <li>
+                <a href="soup.html">#국물</a>
+              </li>
+              <li>
+                <a href="desert.html">#디저트</a>
+              </li>
+              <li>
+                <a href="pork.html">#돼지고기</a>
+              </li>
+              <li>
+                <a href="egg.html">#계란</a>
+              </li>
+              <li>
+                <a href="kimchi.html">#김치</a>
+              </li>
+              <li>
+                <a href="spicyfood.html">#매운요리</a>
+              </li>
+              <li>
+                <a href="seafood.html">#해산물</a>
+              </li>
+              <li>
+                <a href="low_cal">#저칼로리</a>
+              </li>
+            </ul>
+          </li>
+          <li><!-- 시즌별 추천 레시피 -->
+            <a href="season.html" title="시즌별 추천 레시피">시즌별 추천 레시피</a>
+          <!-- 서브메뉴 -->
+            <ul class="sub01">
+              <li>
+                <a href="spring.html">봄철 추천 레시피</a>
+              </li>
+              <li>
+                <a href="summer.html">여름철 추천 레시피</a>
+              </li>
+              <li>
+                <a href="autumn.html">가을철 추천 레시피</a>
+              </li>
+              <li>
+                <a href="winter.html">겨울철 추천 레시피</a>
+              </li>
+            </ul>
+          </li>
+          <li><!-- 이벤트 -->
+            <a href="event.html" title="이벤트">이벤트</a>
+          <!-- 서브메뉴 -->
+            <ul class="sub01">
+              <li>
+                <a href="coupon_event.html">쿠폰 에빈트</a>
+              </li>
+              <li>
+                <a href="discount_event.html">할인 이벤트</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- 태블릿 해더 -->
+    <div class="tablet_h">
+      <h1><!-- 태블릿 헤더 상단 로고 -->
+        <a href="index.html">
+          <img src="./images/오뚜기오키친로고.png" alt="오뚜기 오키친 로고">
+        </a>
+      </h1>
+      <!-- 태블릿 헤더 아이콘 메뉴 -->
+      <nav class="tablet_nav">
+        <ul>
+          <li>
+            <i class="tablet_menu">
+              <img src="./images/Menu_white.svg" alt="전체메뉴">
+            </i>
+          </li>
+          <li>
+            <a href="#" class="tablet_basket">
+              <img src="./images/장바구니_흰색_투명배경.png" alt="오뚜기몰">
+            </a>
+          </li>
+          <li>
+            <a href="#" class="tablet_balance">
+              <img src="./images/오밸런스_흰색_투명배경.png" alt="오밸런스">
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- 태블릿 헤더 검색바 -->
+      <label for="tablet_sb"><span>검색</span><img src="./images/search_white.svg" alt="태블릿 검색바 아이콘"></label>
+      <input type="text" value="오뚜기 제품, 요리명 검색" id="tablet_sb"/>
+      <!-- 모바일 검색바 아이콘 -->
+      <i class="m_search">
+        <img src="./images/search_white.svg" alt="검색바 토글버튼">
+      </i>
+    </div>
+    
+  </header>
+
+  <main>
+    <!-- 메인 슬라이드 -->
+    <div class="main_banner swiper">
+      <div class="swiper-wrapper">
+        <article class="swiper-slide">
+          <a href="./o'kitchen_studio.html">
+            <img src="./images/메인배너이미지1.jpg" alt="메인배너1" class="pc_banner">
+            <img src="./images/메인배너이미지_m2.jpg" alt="메인배너1" class="tablet_banner">
+            <img src="./images/메인배너이미지_m1.jpg" alt="메인배너1" class="mobile_banner">
+          </a>
+        </article>
+        <article class="swiper-slide">
+          <a href="딸기케이크.html">
+            <img src="./images/메인배너이미지2.jpg" alt="메인배너2" class="pc_banner">
+            <img src="./images/메인배너이미지_t2.jpg" alt="메인배너2" class="tablet_banner">
+            <img src="./images/메인배너이미지_m2.jpg" alt="메인배너2" class="mobile_banner">
+          </a>
+        </article>
+        <article class="swiper-slide">
+          <a href="main3.html">
+            <img src="./images/메인배너이미지3.jpg" alt="메인배너3" class="pc_banner">
+            <img src="./images/메인배너이미지_t3.jpg" alt="메인배너3" class="tablet_banner">
+            <img src="./images/메인배너이미지_m3.jpg" alt="메인배너3" class="mobile_banner">
+          </a>
+        </article>
+        <article class="swiper-slide">
+          <a href="main4.html">
+            <img src="./images/메인배너이미지4.jpg" alt="메인배너4" class="pc_banner">
+            <img src="./images/메인배너이미지_t4.jpg" alt="메인배너4" class="tablet_banner">
+            <img src="./images/메인배너이미지_m4.jpg" alt="메인배너4" class="mobile_banner">
+          </a>
+        </article>
+        <article class="swiper-slide">
+          <a href="main5.html">
+            <img src="./images/메인배너이미지5.jpg" alt="메인배너5" class="pc_banner">
+            <img src="./images/메인배너이미지_t5.jpg" alt="메인배너5" class="tablet_banner">
+            <img src="./images/메인배너이미지_m5.jpg" alt="메인배너5" class="mobile_banner">
+          </a>
+        </article>
+        <article class="swiper-slide">
+          <a href="o'balance.html">
+            <img src="./images/메인배너이미지6.jpg" alt="메인배너6" class="pc_banner">
+            <img src="./images/메인배너이미지_t6.jpg" alt="메인배너6" class="tablet_banner">
+            <img src="./images/메인배너이미지_m6.jpg" alt="메인배너6" class="moblie_banner">
+          </a>
+        </article>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+      <!-- 카테고리별 추천레시피 -->
+    <section class="category">
+      <div class="category_box">
+        <article class="category_txt">
+          <div class="category_txtbox">
+            <h2><span>카테고리별</span><br>추천레시피</h2>
+            <p>어떤 요리를 만뜰까?</p>
+            <p>고민 많을 당신을 위해</p>
+            <p>오'키친이 제안하는 추천레시피!</p>
+            <a href="category.html">
+              <img src="./images/menu_more.svg" alt="카테고리 더보기 아이콘">
+              <span class="category_more">카테고리 더보기
+                <img src="./images/small_direction.svg" alt="더보기 우측 화살표 아이콘">
+              </span>
+            </a>
+          </div>
+        </article>
+        <article class="category_cont">
+          <div class="category_swiper swiper">
+            <div class="swiper-wrapper">
+              <div class="category_card swiper-slide"><!-- 카테고리 카드디자인1 -->
+                <img src="./images/햄마요덮밥2.jpg" alt="햄마요덮밥">
+                <ul class="card_text01">
+                  <li>종류 &#58; 밥</li>
+                  <li>햄마요덮밥</li>
+                </ul>
+                <div class="ct_under">
+                  <ul class="card_text02">
+                    <li>준비시간</li>
+                    <li>8분</li>
+                  </ul>
+                  <ul class="card_text03">
+                    <li>조리시간</li>
+                    <li>7분</li>
+                  </ul>
+                  <ul class="card_text04">
+                    <li>인분수</li>
+                    <li>1인분</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="category_card swiper-slide"><!-- 카테고리 카드디자인2 -->
+                <img src="./images/고구마에그샌드위치_category.png" alt="고구마에그샌드위치">
+                <ul class="card_text01">
+                  <li>재료 &#58; 계란</li>
+                  <li>고구마에그샌드위치</li>
+                </ul>
+                <div class="ct_under">
+                  <ul class="card_text02">
+                    <li>준비시간</li>
+                    <li>10분</li>
+                  </ul>
+                  <ul class="card_text03">
+                    <li>조리시간</li>
+                    <li>15분</li>
+                  </ul>
+                  <ul class="card_text04">
+                    <li>인분수</li>
+                    <li>2인분</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="category_card swiper-slide"><!-- 카테고리 카드디자인3 -->
+                <img src="./images/도토리묵무침_category.png" alt="도토리묵무침">
+                <ul class="card_text01">
+                  <li>방법 : 무침 &#183; 비빔</li>
+                  <li>도토리묵무침</li>
+                </ul>
+                <div class="ct_under">
+                  <ul class="card_text02">
+                    <li>준비시간</li>
+                    <li>20분</li>
+                  </ul>
+                  <ul class="card_text03">
+                    <li>조리시간</li>
+                    <li>10분</li>
+                  </ul>
+                  <ul class="card_text04">
+                    <li>인분수</li>
+                    <li>4인분</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="category_card swiper-slide"><!-- 카테고리 카드디자인4 -->
+                <img src="./images/창녕갈릭소불고기_category.png" alt="창녕갈릭소불고기">
+                <ul class="card_text01">
+                  <li>테마 &#58; 요린이를 위하여</li>
+                  <li>창녕갈릭 소불고기</li>
+                </ul>
+                <div class="ct_under">
+                  <ul class="card_text02">
+                    <li>준비시간</li>
+                    <li>30분</li>
+                  </ul>
+                  <ul class="card_text03">
+                    <li>조리시간</li>
+                    <li>10분</li>
+                  </ul>
+                  <ul class="card_text04">
+                    <li>인분수</li>
+                    <li>2인분</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="category_card swiper-slide"><!-- 카테고리 카드디자인5 -->
+                <img src="./images/딸기케이크_category.png" alt="딸기케이크">
+                <ul class="card_text01">
+                  <li>기념일 &#58; 생일</li>
+                  <li>딸기케이크</li>
+                </ul>
+                <div class="ct_under">
+                  <ul class="card_text02">
+                    <li>준비시간</li>
+                    <li>10분</li>
+                  </ul>
+                  <ul class="card_text03">
+                    <li>조리시간</li>
+                    <li>30분</li>
+                  </ul>
+                  <ul class="card_text04">
+                    <li>인분수</li>
+                    <li>6인분</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="category_card swiper-slide"><!-- 카테고리 카드디자인6 -->
+                <img src="./images/만두그라탕_category.png" alt="만두그라탕">
+                <ul class="card_text01">
+                  <li>도구 &#58; 전자레인지</li>
+                  <li>만두그라탕</li>
+                </ul>
+                <div class="ct_under">
+                  <ul class="card_text02">
+                    <li>준비시간</li>
+                    <li>10분</li>
+                  </ul>
+                  <ul class="card_text03">
+                    <li>조리시간</li>
+                    <li>5분</li>
+                  </ul>
+                  <ul class="card_text04">
+                    <li>인분수</li>
+                    <li>1인분</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- 인기레시피 -->
+    <section class="hot">
+      <h2>인기레시피</h2>
+      <p>오'키친에서 많은 분들이 찾아본 인기 레시피를 소개힙니다.</p>
+      <a href="hot.html" class="hot_more">
+        <img src="./images/menu_more.svg" alt="인기레시피 더보기 아이콘">
+        <span >인기레시피 더보기
+          <img src="./images/small_direction.svg" alt="더보기 우측 화살표 아이콘 ">
+        </span>
+      </a>
+      </div>
+      <div class="hot_cont">
+        <article class="hot_card01 h01"><!-- 인기레시피 카드디자인1 -->
+          <img src="./images/햄마요덮밥1.jpg" alt="햄마요덮밥">
+          <div class="ht_box">
+            <ul class="card_text01">
+              <li>햄마요덮밥</li>
+            </ul>
+            <div class="ht_under">
+              <ul class="card_text02">
+                <li>준비시간</li>
+                <li>8분</li>
+              </ul>
+              <ul class="card_text03">
+                <li>조리시간</li>
+                <li>7분</li>
+              </ul>
+              <ul class="card_text04">
+                <li>인분수</li>
+                <li>1인분</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="hot_card02 h02"><!-- 인기레시피 카드디자인2 -->
+          <img src="./images/토마토냉파스타2.jpg" alt="토마토냉파스타">
+          <ul class="card_text01">
+            <li>토마토냉파스타</li>
+          </ul>
+          <div class="ht_under">
+            <ul class="card_text02">
+              <li>준비시간</li>
+              <li>20분</li>
+            </ul>
+            <ul class="card_text03">
+              <li>조리시간</li>
+              <li>5분</li>
+            </ul>
+            <ul class="card_text04">
+              <li>인분수</li>
+              <li>1인분</li>
+            </ul>
+          </div>
+        </article>
+        <article class="hot_card02 h03"><!-- 인기레시피 카드디자인3 -->
+          <img src="./images/콘치즈2.jpg" alt="콘치즈">
+          <ul class="card_text01">
+            <li>콘치즈</li>
+          </ul>
+          <div class="ht_under">
+            <ul class="card_text02">
+              <li>준비시간</li>
+              <li>5분</li>
+            </ul>
+            <ul class="card_text03">
+              <li>조리시간</li>
+              <li>5분</li>
+            </ul>
+            <ul class="card_text04">
+              <li>인분수</li>
+              <li>1인분</li>
+            </ul>
+          </div>
+        </article>
+        <article class="hot_card02 h04"><!-- 인기레시피 카드디자인4 -->
+          <img src="./images/유자연근조림2.jpg" alt="유자연근조림">
+          <ul class="card_text01">
+            <li>유자연근조림</li>
+          </ul>
+          <div class="ht_under">
+            <ul class="card_text02">
+              <li>준비시간</li>
+              <li>2분</li>
+            </ul>
+            <ul class="card_text03">
+              <li>조리시간</li>
+              <li>30분</li>
+            </ul>
+            <ul class="card_text04">
+              <li>인분수</li>
+              <li>4인분</li>
+            </ul>
+          </div>
+        </article>
+        <article class="hot_card02 h05"><!-- 인기레시피 카드디자인5 -->
+          <img src="./images/육개장칼국수2.jpg" alt="육개장칼국수">
+          <ul class="card_text01">
+            <li>육개장칼국수</li>
+          </ul>
+          <div class="ht_under">
+            <ul class="card_text02">
+              <li>준비시간</li>
+              <li>5분</li>
+            </ul>
+            <ul class="card_text03">
+              <li>조리시간</li>
+              <li>10분</li>
+            </ul>
+            <ul class="card_text04">
+              <li>인분수</li>
+              <li>2인분</li>
+            </ul>
+          </div>
+        </article>
+        <article class="hot_card01 h06"><!-- 인기레시피 카드디자인6 -->
+          <div class="hot_card">  
+            <img src="./images/차돌박이된장찌개1.jpg" alt="차돌박이된장찌개">
+            <div class="ht_box">
+              <ul class="card_text01">
+                <li>차돌박이 된장찌개</li>
+              </ul>
+              <div class="ht_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>2인분</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- 신규레시피 -->
+    <section class="new">
+        <h2>신규레시피</h2>
+        <p>새롭게 추가된 레시피로 평소와는 다른 새로운 한끼를 만나보세요!</p>
+        <div class="new_cont swiper">
+          <div class="swiper-wrapper">
+            <article class="new_card01 swiper-slide">
+              <img src="./images/당근크림스프.jpg" alt="당근크림스프">
+              <ul class="card_text01">
+                <li>당근크림스프</li>
+              </ul>
+              <div class="nt_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>20분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>2인분</li>
+                </ul>
+              </div>
+            </article>
+            <article  class="new_card01 swiper-slide">
+              <img src="./images/한라산볶음밥.jpg" alt="한라산볶음밥">
+              <ul class="card_text01">
+                <li>한라산볶음밥</li>
+              </ul>
+              <div class="nt_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>5분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>1인분</li>
+                </ul>
+              </div>
+            </article>
+            <article  class="new_card01 swiper-slide">
+              <img src="./images/초콜릿피자.jpg" alt="초콜릿피자">
+              <ul class="card_text01">
+                <li>초콜릿피자</li>
+              </ul>
+              <div class="nt_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>5분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>1인분</li>
+                </ul>
+              </div>
+            </article>
+            <article  class="new_card01 swiper-slide">
+            <img src="./images/사골마라탕2.jpg" alt="사골마라탕">
+            <ul class="card_text01">
+              <li>사골마라탕</li>
+            </ul>
+              <div class="nt_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>15분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>3인분</li>
+                </ul>
+              </div>
+            </article>
+            <article class="new_card01 swiper-slide">
+              <img src="./images/당근크림스프.jpg" alt="당근크림스프">
+              <ul class="card_text01">
+                <li>당근크림스프</li>
+              </ul>
+              <div class="nt_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>20분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>2인분</li>
+                </ul>
+              </div>
+            </article>
+            <article  class="new_card01 swiper-slide">
+              <img src="./images/한라산볶음밥.jpg" alt="한라산볶음밥">
+              <ul class="card_text01">
+                <li>한라산볶음밥</li>
+              </ul>
+              <div class="nt_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>5분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>1인분</li>
+                </ul>
+              </div>
+            </article>
+            <article  class="new_card01 swiper-slide">
+              <img src="./images/초콜릿피자.jpg" alt="초콜릿피자">
+              <ul class="card_text01">
+                <li>초콜릿피자</li>
+              </ul>
+              <div class="nt_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>5분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>1인분</li>
+                </ul>
+              </div>
+            </article>
+            <article  class="new_card01 swiper-slide">
+            <img src="./images/사골마라탕2.jpg" alt="사골마라탕">
+            <ul class="card_text01">
+              <li>사골마라탕</li>
+            </ul>
+              <div class="nt_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>15분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>3인분</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <!-- 신규레시피 더보기 -->
+        <a href="new.html" class="new_more">신규레시피 더보기 &#62;</a>
+      </div>
+    </section>
+    <!-- 시즌별 추천 레시피 -->
+    <section class="season">
+      <h2>시즌별 추천 레시피</h2>
+      <p>이 계절하면 이 음식이지! 계절별 추천 레시피로 맛있는 계절되세요!</p>
+      <nav class="season_nav">
+        <ul class="season_navbox">
+          <li><a href="#">봄</a></li>
+          <li><a href="#">여름</a></li>
+          <li><a href="#">가을</a></li>
+          <li><a href="#">겨울</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="season_more">
+        <img src="./images/menu_more.svg" alt="시즌별 추천레시피 더보기 아이콘">
+        <span >시즌별 추천레시피 더보기
+          <img src="./images/small_direction.svg" alt="더보기 우측 화살표 아이콘">
+        </span>
+      </a>
+      <div class="season_cont">
+        <div class="sc_box spring">
+          <article class="season_card">
+            <img src="./images/차돌냉이된장찌개.jpg" alt="차돌냉이된장찌개">
+            <ul class="card_text01">
+              <li>차돌 냉이된장찌개</li>
+            </ul>
+              <div class="st_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>4인분</li>
+                </ul>
+              </div>
+          </article>
+          <article class="season_card">
+            <img src="./images/오징어봄동무침.jpg" alt="오징어봄동무침">
+            <ul class="card_text01">
+              <li>오징어 봄동무침</li>
+            </ul>
+              <div class="st_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>20분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>10분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>4인분</li>
+                </ul>
+              </div>
+          </article>
+          <article class="season_card">
+            <img src="./images/두릅튀김우동.jpg" alt="두릅튀김우동">
+            <ul class="card_text01">
+              <li>두릅튀김우동</li>
+            </ul>
+              <div class="st_under">
+                <ul class="card_text02">
+                  <li>준비시간</li>
+                  <li>20분</li>
+                </ul>
+                <ul class="card_text03">
+                  <li>조리시간</li>
+                  <li>분</li>
+                </ul>
+                <ul class="card_text04">
+                  <li>인분수</li>
+                  <li>1인분</li>
+                </ul>
+              </div>
+          </article>
+        </div>
+        <img src="./images/봄배경사진.jpg" alt="봄배경사진">
+      </div>
+    </section>
+    <!-- 이벤트 -->
+    <section class="event">
+      <h2>이벤트</h2>
+      <div class="event_box">
+        <article class="event01">
+          <img src="./images/eventbanner1.png" alt="쿠폰이벤트배너">
+          <div class="event_text01">
+            <p>발급 가능한 쿠폰 확인하기</p>
+            <p>쿠폰으로 알뜰하게 구매해요.</p>
+          </div>
+        </article>
+        <article class="event02">
+          <img src="./images/eventbanner2.png" alt="할인이벤트배너">
+          <div class="event_text02">
+            <p>오뚜기몰 무료배송만 모았어요</p>
+            <p>오뚜기라면, 만두 외 인기상품</p>
+            <p>최대 52% 할인찬스!</p>
+          </div>
+        </article>
+        <article class="event03">
+          <img src="./images/otokimall_eventbanner.jpg" alt="오뚜기몰 홍보배너">
+          <a href="#" class="new_more">오뚜기몰 바로가기 &#62;</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 영역 -->
+  <footer>
+    <!-- 푸터 로고 -->
+    <div class="f_inner">
+      <h2 class="f_logo">
+        <a href="index.html">
+          <img src="./images/오뚜기_로고.png" alt="오뚜기 로고">
+        </a>
+      </h2>
+      <!-- 푸터 좌측 -->
+      <div class="f_left">
+        <p>(주)오뚜기</p>
+        <address>경기도 안양시 동안구 홍안대로 405</address>
+        <p>sample@smaple.com | 000-0000-0000</p>
+        <p>Copyright c otoki co.,Ltd All Rights Reserved.</p>
+      </div>
+      <!-- 푸터 우측 -->
+      <div class="f_right">
+        <nav class="f_nav"><!-- 푸터 패밀리사이트 네비게이션 -->
+          <ul>
+            <li>
+              FAMILY SITE
+            </li>
+            <li>
+              <a href="https://www.otoki.com/main/">(주) 오뚜기</a>
+            </li>
+            <li>
+              <a href="https://www.otokimall.com/front/main">오뚜기몰</a>
+            </li>
+            <li>
+              <a href="https://obalance.otoki.com/home">오밸런스</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="f_icon"><!-- 푸터 SNS아이콘 -->
+          <ul>
+            <li>
+              <a href="blog.html">
+                <img src="./images/blog_icon.png" alt="오키친블로그아이콘">
+              </a>
+            </li>
+            <li>
+              <a href="faceboot.html">
+                <img src="./images/facebook_icon.png" alt="오키친페이스북아이콘">
+              </a>
+            </li>
+            <li>
+              <a href="instagram.html">
+                <img src="./images/instagram_icon.png" alt="오키친인스타그램아이콘">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- 모바일 푸터 -->
+    <div class="mf_inner">
+      <div class="mf_text">
+        <p>(주)오뚜기</p>
+        <address>경기도 안양시 동안구 홍안대로 405</address>
+        <p>sample@smaple.com | 000-0000-0000</p>
+        <p>Copyright c otoki co.,Ltd All Rights Reserved.</p>
+      </div>
+      <nav class="mf_nav">
+        <ul>
+            <li>
+              FAMILY SITE
+            </li>
+            <li>
+              <a href="https://www.otoki.com/main/">(주) 오뚜기</a>
+            </li>
+            <li>
+              <a href="https://www.otokimall.com/front/main">오뚜기몰</a>
+            </li>
+            <li>
+              <a href="https://obalance.otoki.com/home">오밸런스</a>
+            </li>
+          </ul>
+      </nav>
+      <nav class="mf_icon">
+        <ul>
+          <li>
+            <a href="blog.html">
+              <img src="./images/blog_icon.png" alt="오키친블로그아이콘">
+            </a>
+          </li>
+          <li>
+            <a href="faceboot.html">
+              <img src="./images/facebook_icon.png" alt="오키친페이스북아이콘">
+            </a>
+          </li>
+          <li>
+            <a href="instagram.html">
+              <img src="./images/instagram_icon.png" alt="오키친인스타그램아이콘">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <!-- JS script 라이브러리 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+  <!-- 문서 적용 script -->
+  <script src="./script/swiper.js"></script>
+
+</body>
+</html>
